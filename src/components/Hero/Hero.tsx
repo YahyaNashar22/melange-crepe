@@ -5,8 +5,8 @@ import happiness from "../../assets/happiness.jpg";
 const Hero = () => {
   return (
     <section className={styles.wrapper}>
-      <a href="https://wa.me/+96170576716" className={styles.cta}>
-        Order Now
+      <a href="#menu" className={styles.cta}>
+        Check Our Menu
       </a>
       <h1 className={styles.headline}>Unlock your happiness</h1>
       <h2 className={styles.slogan}>Potential</h2>
@@ -20,3 +20,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+// https://wa.me/+96170576716

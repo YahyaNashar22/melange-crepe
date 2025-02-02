@@ -1,7 +1,7 @@
 .wrapper {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100dvw;
+  height: 100dvh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,7 @@
   border-radius: 8px;
   transition: 0.3s ease-in-out;
   cursor: pointer;
-  border: 1px solid #ff9800;
+  border: 2px solid #ff9800;
 }
 
 .cta:hover {
