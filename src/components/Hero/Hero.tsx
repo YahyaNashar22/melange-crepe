@@ -20,5 +20,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-// https://wa.me/+96170576716

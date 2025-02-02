@@ -1,0 +1,32 @@
+.freshly {
+  width: 100%;
+  background-color: var(--cherry-blossom-pink);
+  color: var(--white);
+  font-family: Poppins, Inter;
+  padding: 20px;
+}
+
+.freshlyHeader {
+  font-size: 1.6rem;
+  text-align: center;
+  border-bottom: 1px dashed var(--white);
+  border-top: 1px dashed var(--white);
+  padding: 10px;
+}
+
+.headerWord {
+  position: relative;
+  margin-right: 20px;
+}
+
+.headerWord::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: -15px;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--white);
+}
