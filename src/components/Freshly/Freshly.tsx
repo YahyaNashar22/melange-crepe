@@ -31,6 +31,23 @@ const Freshly = () => {
         },
       }
     );
+
+    // Animate CTA button
+    gsap.fromTo(
+      `.${styles.cta}`,
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.4,
+        ease: "power2.out", // Bouncy effect for CTA
+        scrollTrigger: {
+          trigger: `.${styles.cta}`,
+          start: "top 90%", // Start animation slightly earlier
+          once: true,
+        },
+      }
+    );
   }, []);
   return (
     <section className={styles.freshly}>
