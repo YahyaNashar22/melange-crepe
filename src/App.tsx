@@ -8,8 +8,8 @@ const App = () => {
     <>
       <main>
         <Hero />
-        <Freshly />
         <Menu />
+        <Freshly />
       </main>
     </>
   );
