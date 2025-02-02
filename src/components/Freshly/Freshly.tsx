@@ -1,3 +1,7 @@
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import styles from "./Freshly.module.css";
 
 import delivery from "../../assets/delivery.png";
@@ -7,6 +11,27 @@ import whatsapp from "../../assets/whatsapp.png";
 
 const Freshly = () => {
   const phone = import.meta.env.VITE_PHONE;
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.fromTo(
+      `.${styles.iconItem}`,
+      { opacity: 0, y: 100 },
+      {
+        opacity: 1,
+        y: 0,
+        stagger: 0.2,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: `.${styles.icons}`,
+          start: "top 80%", // Start animation when 80% of the section is in view
+          once: true, // Ensures animation plays only once and does not replay on scroll
+        },
+      }
+    );
+  }, []);
   return (
     <section className={styles.freshly}>
       <h3 className={styles.freshlyHeader}>
