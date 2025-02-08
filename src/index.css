@@ -18,3 +18,7 @@
   --powder-blue: #05042bff;
   --orange: #ff9800;
 }
+
+::selection {
+  user-select: none;
+}

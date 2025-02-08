@@ -59,7 +59,7 @@ const Freshly = () => {
       <div className={styles.icons}>
         <div className={styles.iconItem}>
           <img src={delivery} width={50} height={50} alt="delivery" />
-          <p className={styles.iconDescription}>Delivery</p>
+          <p className={styles.iconDescription}>Free Delivery</p>
         </div>
         <div className={styles.iconItem}>
           <img src={hot} width={50} height={50} alt="hot" />

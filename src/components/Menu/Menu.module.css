@@ -1,7 +1,153 @@
-.wrapper {
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
+
+.wrapper {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 40px;
+  background-color: var(--powder-blue);
+}
+
+.card {
+  background: linear-gradient(
+    135deg,
+    var(--cherry-blossom-pink),
+    var(--orange),
+    var(--apple-green)
+  );
+  background-size: 200% 200%;
+  color: var(--white);
+  padding: 20px;
+  width: 250px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: gradientAnimation 5s ease infinite;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.cardTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cardDescription {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.toppings {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 40px;
+  padding: 10px 20px;
+  color: var(--white);
+  background: linear-gradient(
+    135deg,
+    var(--cherry-blossom-pink),
+    var(--orange)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeIn 1.5s ease, bounce 1s infinite alternate;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Subtle bounce effect */
+@keyframes bounce {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+
+/* Scattered Images */
+.scatteredImage {
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  transform: rotate(var(--rotation, 0deg));
+  transition: transform 0.3s ease;
+}
+
+.scatteredImage:hover {
+  transform: scale(1.2) rotate(var(--rotation, 0deg));
+}
+
+/* Positioning the images around the section */
+.oreo {
+  top: 140px;
+  left: 10%;
+  --rotation: -15deg;
+}
+.strawberry {
+  top: 100px;
+  right: 5%;
+  --rotation: 10deg;
+}
+.chocolate {
+  bottom: 30%;
+  left: 10%;
+  --rotation: -5deg;
+}
+.pistachio {
+  bottom: 30%;
+  right: 13%;
+  --rotation: 20deg;
+}
+.white {
+  top: 30%;
+  right: 30px;
+  --rotation: -20deg;
+}
+
+.chips {
+  top: 45%;
+  right: 10px;
+  --rotation: -10deg;
+}
+.white_chips {
+  top: 45%;
+  left: 15px;
+  --rotation: -45deg;
+}
+.flakes {
+  top: 30%;
+  left: 30px;
+  --rotation: -20deg;
+}
+
