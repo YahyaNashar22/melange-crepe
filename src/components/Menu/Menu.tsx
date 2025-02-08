@@ -49,6 +49,7 @@ const Menu = () => {
   }, []);
   return (
     <section id="menu" className={styles.wrapper} ref={menuRef}>
+      <h2 className={styles.title}>Our Menu</h2>
       {items.map((item) => (
         <MenuCard
           key={item.name}

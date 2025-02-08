@@ -20,6 +20,13 @@
   background-color: var(--penn-blue);
 }
 
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--white); /* You can replace this with your theme color */
+  margin-bottom: 20px;
+}
+
 .card {
   background: linear-gradient(
     135deg,
@@ -94,7 +101,6 @@
   }
 }
 
-
 /* Scattered Images */
 .scatteredImage {
   position: absolute;
@@ -150,4 +156,3 @@
   left: 5%;
   --rotation: -20deg;
 }
-
