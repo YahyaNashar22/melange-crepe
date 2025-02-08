@@ -1,0 +1,50 @@
+/* Wrapper Styles */
+.wrapper {
+  padding: 20px;
+  text-align: center;
+  background-color: var(--penn-blue);
+}
+
+/* Title Styles */
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--white); /* You can replace this with your theme color */
+  margin-bottom: 20px;
+}
+
+/* Content Styles */
+.content {
+  font-size: 1rem;
+  color: var(--cool-gray); /* You can adjust the color as per your theme */
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* Video Container */
+.videoContainer {
+  position: relative;
+  max-width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+/* Cooking Video */
+.cookingVideo {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .content {
+    font-size: 0.9rem;
+  }
+}
