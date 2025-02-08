@@ -17,7 +17,7 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 40px;
-  background-color: var(--powder-blue);
+  background-color: var(--penn-blue);
 }
 
 .card {
@@ -111,7 +111,7 @@
 /* Positioning the images around the section */
 .oreo {
   top: 140px;
-  left: 10%;
+  left: 5%;
   --rotation: -15deg;
 }
 .strawberry {
@@ -121,12 +121,12 @@
 }
 .chocolate {
   bottom: 30%;
-  left: 10%;
+  left: 8%;
   --rotation: -5deg;
 }
 .pistachio {
   bottom: 30%;
-  right: 13%;
+  right: 4%;
   --rotation: 20deg;
 }
 .white {
@@ -142,12 +142,12 @@
 }
 .white_chips {
   top: 45%;
-  left: 15px;
+  left: 3%;
   --rotation: -45deg;
 }
 .flakes {
   top: 30%;
-  left: 30px;
+  left: 5%;
   --rotation: -20deg;
 }
 

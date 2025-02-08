@@ -60,7 +60,6 @@ const Menu = () => {
         Add your favorite toppings! 🍫🍓 Choose from chocolate chips, fresh
         fruits, sweeteners, corn flakes, and more!
       </h2>
-
       {/* Scattered Images Positioned Around Section */}
       <img
         src={oreo}
@@ -101,28 +100,31 @@ const Menu = () => {
         alt="White Chocolate"
         width={64}
         height={64}
-      />  <img
-      src={chips}
-      className={`${styles.scatteredImage} ${styles.chips}`}
-      loading="lazy"
-      alt="Chips"
-      width={64}
-      height={64}
-    />  <img
-    src={white_chips}
-    className={`${styles.scatteredImage} ${styles.white_chips}`}
-    loading="lazy"
-    alt="White Chips"
-    width={64}
-    height={64}
-  />  <img
-  src={flakes}
-  className={`${styles.scatteredImage} ${styles.flakes}`}
-  loading="lazy"
-  alt="Flakes"
-  width={64}
-  height={64}
-/>
+      />{" "}
+      <img
+        src={chips}
+        className={`${styles.scatteredImage} ${styles.chips}`}
+        loading="lazy"
+        alt="Chips"
+        width={64}
+        height={64}
+      />{" "}
+      <img
+        src={white_chips}
+        className={`${styles.scatteredImage} ${styles.white_chips}`}
+        loading="lazy"
+        alt="White Chips"
+        width={64}
+        height={64}
+      />{" "}
+      <img
+        src={flakes}
+        className={`${styles.scatteredImage} ${styles.flakes}`}
+        loading="lazy"
+        alt="Flakes"
+        width={64}
+        height={64}
+      />
     </section>
   );
 };
