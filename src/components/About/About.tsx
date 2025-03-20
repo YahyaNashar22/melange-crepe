@@ -3,11 +3,11 @@ import gsap from "gsap";
 
 import styles from "./About.module.css";
 
-import ramy from "../../assets/ramy.jpg";
+import waffle from "../../assets/waffle.jpg";
 import delivery from "../../assets/delivery.jpg";
 
 const About = () => {
-  const ramyRef = useRef<HTMLImageElement>(null);
+  const waffleRef = useRef<HTMLImageElement>(null);
   const deliveryRef = useRef<HTMLImageElement>(null); // New ref for the delivery image
   const [isRamyInView, setIsRamyInView] = useState(false); // State for Ramy image visibility
   const [isDeliveryInView, setIsDeliveryInView] = useState(false); // State for delivery image visibility
@@ -17,7 +17,7 @@ const About = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.target === ramyRef.current && entry.isIntersecting) {
+          if (entry.target === waffleRef.current && entry.isIntersecting) {
             setIsRamyInView(true); // Set Ramy image visibility to true when in view
           } else if (
             entry.target === deliveryRef.current &&
@@ -30,19 +30,19 @@ const About = () => {
       { threshold: 0.5 } // Trigger when 50% of the image is visible
     );
 
-    if (ramyRef.current) observer.observe(ramyRef.current); // Start observing Ramy image
+    if (waffleRef.current) observer.observe(waffleRef.current); // Start observing Ramy image
     if (deliveryRef.current) observer.observe(deliveryRef.current); // Start observing Delivery image
 
     return () => {
-      if (ramyRef.current) observer.unobserve(ramyRef.current); // Clean up observer for Ramy image
+      if (waffleRef.current) observer.unobserve(waffleRef.current); // Clean up observer for Ramy image
       if (deliveryRef.current) observer.unobserve(deliveryRef.current); // Clean up observer for Delivery image
     };
   }, []);
 
   useEffect(() => {
-    if (isRamyInView && ramyRef.current) {
+    if (isRamyInView && waffleRef.current) {
       gsap.fromTo(
-        ramyRef.current,
+        waffleRef.current,
         { opacity: 0, scale: 0.5, rotation: -45 }, // Initial state for Ramy image
         {
           opacity: 1,
@@ -84,11 +84,11 @@ const About = () => {
           fruits, our creations are as delightful as they are mouthwatering.
         </p>
         <img
-          src={ramy}
-          alt="ramy"
+          src={waffle}
+          alt="waffle"
           className={styles.aboutImg}
           loading="lazy"
-          ref={ramyRef}
+          ref={waffleRef}
         />
       </div>
 

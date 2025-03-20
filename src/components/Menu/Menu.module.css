@@ -1,3 +1,5 @@
+/* Menu.module.css */
+
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -13,146 +15,126 @@
 .wrapper {
   position: relative;
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   padding: 40px;
   background-color: var(--penn-blue);
 }
 
 .title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  color: var(--white); /* You can replace this with your theme color */
+  color: var(--white);
   margin-bottom: 20px;
 }
 
-.card {
-  background: linear-gradient(
-    135deg,
-    var(--cherry-blossom-pink),
-    var(--orange),
-    var(--apple-green)
-  );
-  background-size: 200% 200%;
-  color: var(--white);
+.section {
+  width: 100%;
+  max-width: 900px;
+  text-align: center;
   padding: 20px;
-  width: 250px;
-  border-radius: 16px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  animation: gradientAnimation 5s ease infinite;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-.cardTitle {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.cardDescription {
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-
-.toppings {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 40px;
-  padding: 10px 20px;
-  color: var(--white);
-  background: linear-gradient(
-    135deg,
-    var(--cherry-blossom-pink),
-    var(--orange)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeIn 1.5s ease, bounce 1s infinite alternate;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Subtle bounce effect */
-@keyframes bounce {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.05);
-  }
-}
-
-/* Scattered Images */
-.scatteredImage {
+.section::before {
+  content: "";
   position: absolute;
-  width: 64px;
-  height: 64px;
-  transform: rotate(var(--rotation, 0deg));
-  transition: transform 0.3s ease;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px) brightness(80%);
+  z-index: 1;
 }
 
-.scatteredImage:hover {
-  transform: scale(1.2) rotate(var(--rotation, 0deg));
+.sectionTitle {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: var(--orange);
+  margin-bottom: 15px;
+  z-index: 20;
+  position: relative;
 }
 
-/* Positioning the images around the section */
-.oreo {
-  top: 140px;
-  left: 5%;
-  --rotation: -15deg;
-}
-.strawberry {
-  top: 100px;
-  right: 5%;
-  --rotation: 10deg;
-}
-.chocolate {
-  bottom: 30%;
-  left: 8%;
-  --rotation: -5deg;
-}
-.pistachio {
-  bottom: 30%;
-  right: 4%;
-  --rotation: 20deg;
-}
-.white {
-  top: 30%;
-  right: 30px;
-  --rotation: -20deg;
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  z-index: 20;
+  position: relative;
 }
 
-.chips {
-  top: 45%;
-  right: 10px;
-  --rotation: -10deg;
+.menuItem {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 600px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  font-size: 1.2rem;
+  color: var(--white);
+  font-weight: bold;
+  transition: background 0.3s;
 }
-.white_chips {
-  top: 45%;
-  left: 3%;
-  --rotation: -45deg;
+
+.menuItem:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
-.flakes {
-  top: 30%;
-  left: 5%;
-  --rotation: -20deg;
+
+.itemName {
+  text-align: left;
+  font-size: 1.4rem;
+}
+
+.itemPrice {
+  text-align: right;
+  font-size: 1.4rem;
+}
+
+.section.crepe {
+  background: url("../../assets/waffle_crepe.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section.waffle {
+  background: url("../../assets/waffle.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section.smashed-pancake {
+  background: url("../../assets/pancake.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section.hot-drinks {
+  background: url("../../assets/order.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section.smoothies {
+  background: url("../../assets/happiness.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section.milkshakes {
+  background: url("../../assets/order.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

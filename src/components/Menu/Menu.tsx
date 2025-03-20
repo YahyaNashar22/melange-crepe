@@ -1,131 +1,73 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-
 import styles from "./Menu.module.css";
 
-import items from "../../items";
-
-import strawberry from "../../assets/strawberry.png";
-import oreo from "../../assets/oreo.png";
-import chocolate from "../../assets/chocolate.png";
-import white_chocolate from "../../assets/white_chocolate.png";
-import pistachio from "../../assets/pistachio.png";
-import chips from "../../assets/chips.png";
-import flakes from "../../assets/flakes.png";
-import white_chips from "../../assets/white_chips.png";
-
-const MenuCard = ({
-  name,
-  description,
-}: {
-  name: string;
-  description: string;
-}) => {
-  return (
-    <div className={styles.card}>
-      <h3 className={styles.cardTitle}>{name}</h3>
-      <p className={styles.cardDescription}>{description}</p>
-    </div>
-  );
+const menuData = {
+  Crepe: [
+    { name: "Nutella Crepe", price: "320.000" },
+    { name: "Swiss Chocolate Crepe", price: "350.000" },
+    { name: "Belgium Chocolate Crepe", price: "360.000" },
+    { name: "Kinder Crepe", price: "420.000" },
+    { name: "Lotus Crepe", price: "450.000" },
+    { name: "Oreo Crepe", price: "370.000" },
+  ],
+  Waffle: [
+    { name: "Nutella Waffle", price: "420.000" },
+    { name: "Swiss Chocolate Waffle", price: "450.000" },
+    { name: "Belgium Chocolate Waffle", price: "460.000" },
+  ],
+  "Smashed Pancake": [
+    { name: "Nutella Pancake", price: "360.000" },
+    { name: "Swiss Chocolate Pancake", price: "380.000" },
+  ],
+  "Hot Drinks": [
+    { name: "Espresso Single", price: "80.000" },
+    { name: "Espresso Double", price: "90.000" },
+  ],
+  Smoothies: [{ name: "Peach Smoothie", price: "300.000" }],
+  Milkshakes: [{ name: "Vanilla Milkshake", price: "300.000" }],
 };
 
+const MenuItem = ({ name, price }: { name: string; price: string }) => (
+  <div className={styles.menuItem}>
+    <span className={styles.itemName}>{name}</span>
+    <span className={styles.itemPrice}>{price}</span>
+  </div>
+);
+
 const Menu = () => {
-  const menuRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (menuRef.current) {
       gsap.fromTo(
         menuRef.current.children,
-        { opacity: 0, y: 50 }, // Start hidden & slightly lower
-        {
-          opacity: 1,
-          y: 0,
-          duration: 2,
-          stagger: 0.2, // Stagger effect for each card
-          ease: "power3.out",
-        }
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 2, stagger: 0.2, ease: "power3.out" }
       );
     }
   }, []);
+
   return (
     <section id="menu" className={styles.wrapper} ref={menuRef}>
       <h2 className={styles.title}>Our Menu</h2>
-      {items.map((item) => (
-        <MenuCard
-          key={item.name}
-          name={item.name}
-          description={item.description}
-        />
-      ))}
-      <h2 className={styles.toppings}>
-        Add your favorite toppings! 🍫🍓 Choose from chocolate chips, fresh
-        fruits, sweeteners, corn flakes, and more!
-      </h2>
-      {/* Scattered Images Positioned Around Section */}
-      <img
-        src={oreo}
-        className={`${styles.scatteredImage} ${styles.oreo}`}
-        loading="lazy"
-        alt="Oreo"
-        width={64}
-        height={64}
-      />
-      <img
-        src={strawberry}
-        className={`${styles.scatteredImage} ${styles.strawberry}`}
-        loading="lazy"
-        alt="Strawberry"
-        width={64}
-        height={64}
-      />
-      <img
-        src={chocolate}
-        className={`${styles.scatteredImage} ${styles.chocolate}`}
-        loading="lazy"
-        alt="Chocolate"
-        width={64}
-        height={64}
-      />
-      <img
-        src={pistachio}
-        className={`${styles.scatteredImage} ${styles.pistachio}`}
-        loading="lazy"
-        alt="Pistachio"
-        width={64}
-        height={64}
-      />
-      <img
-        src={white_chocolate}
-        className={`${styles.scatteredImage} ${styles.white}`}
-        loading="lazy"
-        alt="White Chocolate"
-        width={64}
-        height={64}
-      />{" "}
-      <img
-        src={chips}
-        className={`${styles.scatteredImage} ${styles.chips}`}
-        loading="lazy"
-        alt="Chips"
-        width={64}
-        height={64}
-      />{" "}
-      <img
-        src={white_chips}
-        className={`${styles.scatteredImage} ${styles.white_chips}`}
-        loading="lazy"
-        alt="White Chips"
-        width={64}
-        height={64}
-      />{" "}
-      <img
-        src={flakes}
-        className={`${styles.scatteredImage} ${styles.flakes}`}
-        loading="lazy"
-        alt="Flakes"
-        width={64}
-        height={64}
-      />
+      {Object.entries(menuData).map(([category, items]) => {
+        const categoryClass = category.toLowerCase().replace(/\s+/g, "-");
+
+        return (
+          <div
+            key={category}
+            className={`${styles.section} ${styles[categoryClass] || ""}`}
+          >
+            <h3 className={styles.sectionTitle}>{category}</h3>
+            <div className={styles.itemList}>
+              {items.map((item) => (
+                <MenuItem key={item.name} name={item.name} price={item.price} />
+              ))}
+            </div>
+          </div>
+        );
+      })}
     </section>
   );
 };
