@@ -9,6 +9,10 @@ import hot from "../../assets/hot.png";
 import delicious from "../../assets/delicious.png";
 import whatsapp from "../../assets/whatsapp.png";
 
+import instagram from "../../assets/instagram.png";
+import facebook from "../../assets/facebook.png";
+import tiktok from "../../assets/tiktok.png";
+
 const Freshly = () => {
   const phone = import.meta.env.VITE_PHONE;
 
@@ -51,6 +55,40 @@ const Freshly = () => {
   }, []);
   return (
     <section className={styles.freshly}>
+      <h2 className={styles.followHeader}>Follow us and get free delivery!</h2>
+
+      <ul className={styles.links}>
+        <li className={styles.link}>
+          <a
+            href="https://www.instagram.com/melangelb1?igsh=MTI5dXF0bmxmY3poaw%3D%3D"
+            target="_blank"
+            className={styles.linkIco}
+          >
+            <img src={instagram} alt="instagram" />
+          </a>
+        </li>
+
+        <li className={styles.link}>
+          <a
+            href="https://www.facebook.com/share/1D6MCLVYF7/"
+            target="_blank"
+            className={styles.linkIco}
+          >
+            <img src={facebook} alt="facebook" />
+          </a>
+        </li>
+
+        <li className={styles.link}>
+          <a
+            href="https://www.tiktok.com/@melange.lb?_t=ZS-8uu9H9rrQQO&_r=1"
+            target="_blank"
+            className={styles.linkIco}
+          >
+            <img src={tiktok} alt="tiktok" />
+          </a>
+        </li>
+      </ul>
+
       <h3 className={styles.freshlyHeader}>
         <span className={styles.headerWord}>Freshly</span>
         <span className={styles.headerWord}>Made</span>

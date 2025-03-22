@@ -79,3 +79,17 @@
   background-color: yellow;
   border-color: yellow;
 }
+
+.followHeader {
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px;
+  color: black;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
