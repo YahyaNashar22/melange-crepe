@@ -146,3 +146,10 @@
   background-repeat: no-repeat;
   background-color: yellow;
 }
+
+.section.saj {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: cyan;
+}
