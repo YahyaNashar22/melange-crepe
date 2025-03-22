@@ -1,8 +1,8 @@
 .freshly {
   width: 100%;
-  background-color: var(--penn-blue);
+  background-color: var(--cherry-blossom-pink);
   color: var(--white);
-  font-family: Poppins, Inter;
+  font-family: Montserrat, Inter;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -14,14 +14,16 @@
 .freshlyHeader {
   font-size: 1.6rem;
   text-align: center;
-  border-bottom: 1px dashed var(--white);
-  border-top: 1px dashed var(--white);
+  border-bottom: 1px dashed black;
+  border-top: 1px dashed black;
   padding: 10px;
+  color: black;
 }
 
 .headerWord {
   position: relative;
   margin-right: 20px;
+  color: black;
 }
 
 .headerWord::after {
@@ -33,7 +35,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: var(--white);
+  background-color: black;
 }
 
 .icons {
@@ -49,7 +51,7 @@
 .iconDescription {
   margin-top: 8px;
   font-size: 1.4rem;
-  color: var(--white);
+  color: black;
   font-family: Dancing Script, Inter;
 }
 
@@ -61,18 +63,19 @@
   text-decoration: none;
   color: var(--white);
   font-size: 1.5rem;
-  font-family: Poppins, Inter;
+  font-family: Montserrat, Inter;
   text-align: center;
   align-self: center;
   font-weight: bold;
-  border: 1px solid var(--white);
+  border: 1px solid black;
   padding: 10px 20px;
   border-radius: 8px;
   margin: 40px auto;
   transition: 0.3s ease-in-out;
+  color: black;
 }
 
 .cta:hover {
-  background-color: var(--orange);
-  border-color: var(--orange);
+  background-color: yellow;
+  border-color: yellow;
 }

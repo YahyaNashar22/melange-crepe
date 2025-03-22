@@ -1,6 +1,6 @@
 import styles from "./Cooking.module.css";
 
-import cook from "../../assets/cook.mp4";
+import cook from "../../assets/banner_vid.mp4";
 
 const Cooking = () => {
   return (
